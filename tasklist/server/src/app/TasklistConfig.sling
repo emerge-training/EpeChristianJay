@@ -3,6 +3,7 @@ import jk.http.server.cors
 
 class:
 
+
 func getAllowedOrigins as array
 {
     return [
@@ -10,7 +11,6 @@ func getAllowedOrigins as array
         "http://localhost:8081"
     ]
 }
-
 func getCorsUtil as HTTPServerCORSUtil
 {
     var allowed = new vector<string>
