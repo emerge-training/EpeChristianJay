@@ -1,0 +1,14 @@
+import jk.http.client
+import jk.http.worker
+
+class is HTTPRPCRouter #webapi2:
+
+model TaskRequest
+{
+    name as string
+    description as string
+}
+
+GET "/tasks"
+{ 
+}
