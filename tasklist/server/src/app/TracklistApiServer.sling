@@ -3,10 +3,24 @@ import jk.server.web
 
 class is WebServer:
 
-func initialize(server as HTTPServer) override as bool
+func initializeServer(server as HTTPServer) override as bool
 {
-        assert base.initializeServer(server)
-        return true
+    assert base.initializeServer(server)
+    
+    server.setCreateOptionsResponseHandler(func(req as HTTPServerRequest) as HTTPServerResponse{
+            return TasklistConfig.getCorsUtil().handlePreflightRequest(req)
+    })
+    return true
+}
+
+
+func initializeApplication override as bool
+{
+    assert base.initializeApplication()
+    var db = TasklistDatabase.forContext(ctx)
+    db.updateTables()
+    db.close()
+    return true 
 }
 
 main:
