@@ -47,4 +47,3 @@ func deleteTask(id as string, callback as function<void, DynamicMap>, errorCallb
 
 func getTasks(callback as function<void, DynamicMap>, errorCallback as function<void, Error> = null):
     doGet("/tasks", callback, errorCallback)
-
