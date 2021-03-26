@@ -107,4 +107,3 @@ func close
         db.closeSync()
     db = null
 }
-
