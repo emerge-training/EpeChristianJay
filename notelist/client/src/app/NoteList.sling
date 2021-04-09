@@ -1,0 +1,37 @@
+import jk.widget.common
+
+class is TitledWidget #widget:
+
+ui LayerWidget
+{
+    VerticalScrollerWidget{
+        scrollBarDisabled = true
+        LayerWithBackgroundColorWidget container {
+            color = Color.black()
+            VerticalBoxWidget list {
+                margin = context.getHeightValue("5mm")
+                spacing = context.getHeightValue("5mm")
+
+                LabelWidget myLabel {
+                    text ="Note Lists"
+                    textColor = Color.white()
+                }
+
+                /* List widget */
+            }
+        }
+        
+    }
+}
+
+func initializeWidget override
+{
+    base.initializeWidget()
+    APIClient.getInstance().getTasks(func(response as DynamicMap) {
+    })
+
+}
+
+func getWidgetTitle as string:
+    return "Note List"
+

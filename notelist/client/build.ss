@@ -1,4 +1,4 @@
-  #! eqela ss-0.21
+#! eqela ss-0.21
 #
 # This is part of Simple Hello World
 # Copyright (c) 2021 Eqela

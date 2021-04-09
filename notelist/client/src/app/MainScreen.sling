@@ -11,5 +11,5 @@ func initialize override
     navi = new NavigationWidget(context)
     navi.setWidgetEnableActionBar(false)
     setWidget(navi)
-    navi.pushWidget(new HomeWidget(context))
+    navi.pushWidget(new NoteList(context))
 }

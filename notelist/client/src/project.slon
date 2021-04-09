@@ -1,0 +1,12 @@
+{
+        vendorId "eqela"
+        preject "Note List"
+        title "Sling Note List"
+        copyright "Copyright (c) 2021 Eqela"
+        license "All rights resereved."
+        libraries [
+                "jk-app:0.26.0"
+
+                "jk-net:0.39.0"
+        ]
+}
