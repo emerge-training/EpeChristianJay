@@ -29,7 +29,13 @@ ui LayerWidget
                     backgroundColor = Color.instance("#3716e9")
                     fontSize = context.getHeightValue("5mm")
                     clickHandler = func {
-                        onAddingTaskClicked()
+                        var task = new Task()
+                        Task.setFname(addingTaskTextbox.getWidgetText())
+
+                        APIClient.getInstance().addTask(task.toDynamicMap(), func(response as DynamicMap), error {
+                            if not response
+                                addingTaskTextbox.setWidgetText("")
+                            context.showMessageDialog(error)
                     }
                 }
                 LabelWidget myName {
@@ -67,9 +73,4 @@ func initializeWidget override
 
 func getWidgetTitle as string:
     return "Task list"
-
-func onAddingTaskClicked
-{
-
-}
 
